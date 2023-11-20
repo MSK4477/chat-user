@@ -9,7 +9,7 @@ import ProtectedPage from "./pages/protectedPage";
 import Header from "./components/header";
 import url from "./baseUrl";
 function App() {
-  const socket = io.connect(url) ;
+  const socket = io.connect("http://localhost:4000/user") ;
 
   const [user] = UserHook()
   console.log(user?.message)
