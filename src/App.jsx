@@ -7,9 +7,8 @@ import Chat from "./pages/chat/chat";
 import io from "socket.io-client";
 import ProtectedPage from "./pages/protectedPage";
 import Header from "./components/header";
-import url from "./baseUrl";
 function App() {
-  const socket = io.connect("http://localhost:4000/user") ;
+  const socket = io.connect("http://localhost:4000") ;
 
   const [user] = UserHook()
   console.log(user?.message)
