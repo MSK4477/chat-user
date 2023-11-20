@@ -2,7 +2,7 @@ import axios from "axios";
 import url from "../../baseUrl";
 
 export const getUser = async () => { 
-    const response  = await axios.get(`http://localhost:4000/user/getUser`, { 
+    const response  = await axios.get(`${url}/getUser`, { 
         withCredentials: true
     })
 

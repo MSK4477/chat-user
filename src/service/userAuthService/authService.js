@@ -1,8 +1,8 @@
 import axios from "axios";
-
+import url from "../../baseUrl";
 //register
 export const registerUser = async(data) => {
-    const response = await axios.post("http://localhost:4000/user/register", data)
+    const response = await axios.post(`${url}/register`, data)
 console.log(response)
     return response.data
 }
@@ -10,7 +10,7 @@ console.log(response)
 //verify
 export const  verifyUser = async (token) => {
 
-const response = await axios.get(`http://localhost:4000/user/verify?token=${token}`)
+const response = await axios.get(`${url}/verify?token=${token}`)
 console.log(response)
 return response.data
 }
@@ -19,7 +19,7 @@ return response.data
 
 export const loginUser = async( data ) =>  { 
 
-    const response = await axios.post("http://localhost:4000/user/login", data, {
+    const response = await axios.post(`${url}/login`, data, {
         withCredentials:true
     })
 
@@ -32,7 +32,7 @@ export const loginUser = async( data ) =>  {
 
 export const forgotpassword = async(email) => {
 
-    const response = await axios.post("http://localhost:4000/user/forgotpassword", email)
+    const response = await axios.post(`${url}/register`, email)
 
     console.log(response)
 
@@ -43,14 +43,14 @@ export const forgotpassword = async(email) => {
 //resetpassword 
 
 export const resetPassword = async(password, token) =>  {
-    const response = await axios.post(`http://localhost:4000/user/resetpassword?token=${token}`, password)
+    const response = await axios.post(`${url}/resetpassword?token=${token}`, password)
     console.log(response)
     return response.data
 }
 
 //logout 
 export const logout = async() =>  {
-    const response = await axios.get("http://localhost:4000/user/logout")
+    const response = await axios.get(`${url}/logout`)
     console.log(response)
     return response.data
 }
