@@ -18,7 +18,7 @@ const Chat = ({ socket }) => {
     socket.emit("join-room", { room, author: name });
     setShowChat(true);
   }
-
+console.log(messages, "messagesbro")
   const isfilled = Boolean(room.length === 5) && Boolean(name.length > 3);
 const scrollRef = useRef()
   function sendMessage() {
@@ -39,8 +39,7 @@ const scrollRef = useRef()
       socket.emit("send-message", messagePayload);
       setMessage("");
     }
-    // const  len  = messages.length -1
-// messages[len].scrollIntoView()
+
     scrollRef.current.scrollIntoView()
   }
 
